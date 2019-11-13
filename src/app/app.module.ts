@@ -44,6 +44,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
 import { SpeakersComponent } from './pages/speakers/speakers.component';
 import { UsersComponent } from './pages/users/users.component';
+import { NuevaNotificacionComponent } from './pages/nueva-notificacion/nueva-notificacion.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -83,7 +84,8 @@ const routes: Routes = [];
     MenuComponent,
     NotificacionesComponent,
     SpeakersComponent,
-    UsersComponent
+    UsersComponent,
+    NuevaNotificacionComponent
   ],
   imports: [
     BrowserModule,
