@@ -42,18 +42,7 @@
         <div class="panel-menu p12 admin-form theme-primary">
             <div class="row">
               <div class="col-md-12">
-                  <div [hidden]="!preguntaEliminar" class="panel-body bg-light animated fadeIn">
-
-
-                      <div class="alert alert-success alert-dismissable mb30" style="background-color: #b71c1c" >
-                          <!-- <button type="button" data-dismiss="alert" aria-hidden="true" class="close"></button> -->
-                          <h3 class="mt5">¿Estás seguro que quieres eliminar el cliente {{nombreClienteEliminar}}?</h3>
-                          <br>
-                          <div class="element-groups-sm-custom"><a (click)="eliminar()" class="btn btn-default">Eliminar</a><button type="button" (click)="preguntaEliminar=false; " class="btn btn-default">Cancelar</button></div>
-                        </div>
-        
-        
-                      </div>
+                  
                       <div [hidden]="!eliminado" class="panel-body bg-light animated fadeIn">
 
 
@@ -100,9 +89,9 @@
                         [ngClass]="getClaseStatus(item.estatus)">{{getTextoStatus(item.estatus)}}<span
                           class="caret ml15"></span></button>
                       <ul role="menu" class="dropdown-menu">
-                        <li><a [routerLink]="['/editar-cliente', item.id]">Editar</a></li>
-                        <li><a [routerLink]="['/editar-cliente', item.id]">BorrarEnviar</a></li>
-                        <li><a style = "cursor: pointer;"(click)="eliminarSeleccionado(item.id, item.evento)">Enviar</a></li>
+                        
+                        <li><a (click)="desactivarBD(item.id)">Desactivar</a></li>
+                        <li><a style = "cursor: pointer;"(click)="getTokens(item.id, item.tipoParticipante, item.texto)">Enviar</a></li>
                         <!-- <li><a (click)="inhabilitarEmpleado()">Inhabilitar</a></li>
                           <li><a (click)="habilitarEmpleado()">Habilitar</a></li>
                           <li><a (click)="inhabilitarEmpleado()">Borrar</a></li> -->

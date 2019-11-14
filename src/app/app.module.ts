@@ -48,6 +48,7 @@ import { NuevaNotificacionComponent } from './pages/nueva-notificacion/nueva-not
 import { NuevoUserComponent } from './pages/nuevo-user/nuevo-user.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [];
 @NgModule({
@@ -99,6 +100,7 @@ const routes: Routes = [];
     FormsModule,
     ReactiveFormsModule,
     AngularFireStorageModule,
+    HttpClientModule,
      RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [AngularFirestore, AngularFireStorageModule, AngularFireAuth],

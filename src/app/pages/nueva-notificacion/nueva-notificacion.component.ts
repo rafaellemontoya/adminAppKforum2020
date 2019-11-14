@@ -26,7 +26,7 @@ constructor(private sharedService: SharedService, private afs: AngularFirestore)
 
    }
 
-   nuevoDano(){
+   nuevoDano() {
 
     this.item.tipoParticipante = Number(this.item.tipoParticipante);
     this.item.estatus = Number(this.item.estatus);
