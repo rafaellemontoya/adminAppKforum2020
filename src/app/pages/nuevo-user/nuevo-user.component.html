@@ -9,8 +9,8 @@
         <ol class="breadcrumb">
 
           <li class="crumb-icon"><a routerLink="/inicio"><span class="glyphicon glyphicon-home"></span></a></li>
-          <li class="crumb-link"><a routerLink="/empleados">Notificación</a></li>
-          <li class="crumb-trail">Nueva Notificación</li>
+          <li class="crumb-link"><a routerLink="/empleados">Usuario</a></li>
+          <li class="crumb-trail">Nuevo Usuario</li>
         </ol>
       </div>
 
@@ -22,9 +22,9 @@
         <div class="mw1000 center-block">
           <!-- Begin: Content Header-->
           <div class="content-header">
-            <h2> <b style="color:#004A8E;">Nueva notificación</b>
+            <h2> <b style="color:#004A8E;">Nuevo Usuario</b>
             </h2>
-            <p class="lead">Llena el formulario para agregar nueva notificación</p>
+            <p class="lead">Llena el formulario para agregar nuevo usuario</p>
           </div>
 
 
@@ -38,118 +38,65 @@
 
               <div class="alert alert-success alert-dismissable mb30" style="background: rgb(3, 151, 102)">
                   <!-- <button type="button" data-dismiss="alert" aria-hidden="true" class="close"></button> -->
-                  <h3 class="mt5">Nueva notificación guardada exitosamente!</h3>
-                  <p>Nueva notificación añadida con éxito.</p><br>
-                  <div class="element-groups-sm-custom"><a routerLink="/tipo-dano" class="btn btn-default">Continuar</a><button type="button" routerLink="/nuevo-tipo-dano " class="btn btn-default">Nueva notificación</button></div>
+                  <h3 class="mt5">Nuevo usuario guardado exitosamente!</h3>
+                  <p>Nuevo usuario añadido con éxito.</p><br>
+                  <div class="element-groups-sm-custom"><a routerLink="/tipo-dano" class="btn btn-default">Continuar</a><button type="button" routerLink="/nuevo-tipo-dano " class="btn btn-default">Nueva usuario</button></div>
                 </div>
 
 
               </div>
               <!-- Panel formulario-->
               <div [hidden]="submitted" class="panel-body bg-light">
-                <form (ngSubmit)="nuevoDano()" (keydown.enter)="$event.preventDefault()">
+                <form (ngSubmit)="nuevoToken()" (keydown.enter)="$event.preventDefault()">
                   <div id="spy1" class="section-divider mb40"><span style="color:#004A8E;">Información general</span></div>
                   <!-- .section-divider-->
                   <!-- Basic Inputs-->
 
+
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="section">
+                        <label class="field prepend-icon">
+                          <input type="text"  [(ngModel)]="item.email" #codigo="ngModel" id="email" required  name="email" placeholder="E-mail" class="gui-input">
+                          <b class="tooltip tip-right-top">
+                            <em> e-mail</em>
+                          </b>
+                          <label for="tooltip1" class="field-icon"><i class="fa fa-flag"></i></label>
+                        </label>
+                        <!--
+                        <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+                           Se necesita un nombre de empleado
+                        </div>
+                      -->
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="col-md-4">
                       <div class="section">
                         <label class="field select">
-                          <select class="form-control" name="estatus" id="estatus" required [(ngModel)]="item.estatus" #clsificacionEquipo="ngModel" >
-
-                            <option value=0  >Inactivo</option>
-                            <option value=1  >Activo</option>
-                            </select><i class="arrow"></i>
-                      </label>
-
-                      </div>
-                  </div>
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="section">
-                        <label class="field prepend-icon">
-                          <input type="text"  [(ngModel)]="item.fecha" #codigo="ngModel" id="hora" required  name="hora" placeholder="Hora" class="gui-input">
-                          <b class="tooltip tip-right-top">
-                            <em> Hora</em>
-                          </b>
-                          <label for="tooltip1" class="field-icon"><i class="fa fa-flag"></i></label>
-                        </label>
-                        <!--
-                        <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
-                           Se necesita un nombre de empleado
-                        </div>
-                      -->
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="section">
-                        <label class="field prepend-icon">
-                          <input type="number"  [(ngModel)]="item.orden" #codigo="ngModel" id="orden" required  name="orden" placeholder="Orden" class="gui-input">
-                          <b class="tooltip tip-right-top">
-                            <em> Orden</em>
-                          </b>
-                          <label for="tooltip1" class="field-icon"><i class="fa fa-flag"></i></label>
-                        </label>
-                        <!--
-                        <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
-                           Se necesita un nombre de empleado
-                        </div>
-                      -->
-                      </div>
-                    </div>
-
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="section">
-                        <label class="field prepend-icon">
-                          <input type="text"  [(ngModel)]="item.texto" #codigo="ngModel" id="texto" required  name="texto" placeholder="Texto" class="gui-input">
-                          <b class="tooltip tip-right-top">
-                            <em> Texto</em>
-                          </b>
-                          <label for="tooltip1" class="field-icon"><i class="fa fa-flag"></i></label>
-                        </label>
-                        <!--
-                        <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
-                           Se necesita un nombre de empleado
-                        </div>
-                      -->
-                      </div>
-                    </div>
-
-                  </div>
-
-
-                  <!-- Input Icons-->
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="section">
-                        <label class="field select">
-                          <select class="form-control" type = "number" name="tipo-participante" id="tipo-participante" required [(ngModel)]="item.tipoParticipante" #clsificacionEquipo="ngModel" >
+                          <select class="form-control" name="tipo" id="tipo" required [(ngModel)]="item.tipo" #clsificacionEquipo="ngModel" >
 
                             <option value=1  >Participante</option>
                             <option value=2  >Acompañante</option>
-
                             </select><i class="arrow"></i>
                       </label>
 
                       </div>
                   </div>
-
-
-
-
                   </div>
+
+
+
+
+
+
+
+
+
+
 
 
                   <!-- Multi Selects-->
@@ -164,7 +111,7 @@
 
 
                   <div class="panel-footer ">
-                    <button type="button" class="btn btn-success" (click)="nuevoDano()">Guardar</button>
+                    <button type="button" class="btn btn-success" (click)="nuevoToken()">Guardar</button>
 
                     <a (click)="cancel()" class="btn btn-danger" style="margin-left: 20px;" >Cancelar</a>
                   </div>

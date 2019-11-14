@@ -34,6 +34,8 @@ import { AgendaComponent } from './pages/agenda/agenda.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { NotificacionesComponent } from './pages/notificaciones/notificaciones.component';
 import { SpeakersComponent } from './pages/speakers/speakers.component';
+import { NuevaNotificacionComponent } from './pages/nueva-notificacion/nueva-notificacion.component';
+import { NuevoUserComponent } from './pages/nuevo-user/nuevo-user.component';
 
 
 const routes: Routes = [
@@ -45,12 +47,15 @@ const routes: Routes = [
     {path: 'menu', component: MenuComponent},
     {path: 'notificaciones', component: NotificacionesComponent},
     {path: 'speakers', component: SpeakersComponent},
-    
+    {path: 'nueva-notificacion', component: NuevaNotificacionComponent},
+    {path: 'nuevo-user', component: NuevoUserComponent},
 
 
 
 
-    
+
+
+
 
 ];
 @NgModule({

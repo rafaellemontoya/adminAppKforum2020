@@ -45,6 +45,9 @@ import { NotificacionesComponent } from './pages/notificaciones/notificaciones.c
 import { SpeakersComponent } from './pages/speakers/speakers.component';
 import { UsersComponent } from './pages/users/users.component';
 import { NuevaNotificacionComponent } from './pages/nueva-notificacion/nueva-notificacion.component';
+import { NuevoUserComponent } from './pages/nuevo-user/nuevo-user.component';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 
 const routes: Routes = [];
 @NgModule({
@@ -85,7 +88,8 @@ const routes: Routes = [];
     NotificacionesComponent,
     SpeakersComponent,
     UsersComponent,
-    NuevaNotificacionComponent
+    NuevaNotificacionComponent,
+    NuevoUserComponent
   ],
   imports: [
     BrowserModule,
@@ -95,9 +99,9 @@ const routes: Routes = [];
     FormsModule,
     ReactiveFormsModule,
     AngularFireStorageModule,
-    RouterModule.forRoot(routes, { useHash: true })
+     RouterModule.forRoot(routes, { useHash: true })
   ],
-  providers: [AngularFirestore, AngularFireStorageModule],
+  providers: [AngularFirestore, AngularFireStorageModule, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
